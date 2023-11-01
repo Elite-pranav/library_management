@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <style>
+        body {
+            background-image: url('bg.jpeg'); 
+            background-size: 1600px;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; 
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header2 {
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .container {
+            max-width: 300px;
+            margin: 40px auto;
+            background-color: #367588;
+            padding-top: 20px;
+            padding-right: 40px;
+            padding-bottom: 30px;
+            padding-left: 25px;
+            margin-top: 150px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-left: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #005da5;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left:125px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Library Management System</h1>
+    </header>
+    <div class="container">
+        <form id="user-form">
+            <header2>
+                <h1>Login Page</h1>
+            </header2>
+            <label for="userID">User ID</label>
+            <input type="text" id="userID" name="userID" required>
+
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" required>
+
+            <button type="submit" id="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("user-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from actually submitting
+
+            // Get form values
+            const userID = document.getElementById("userID").value;
+            const password = document.getElementById("password").value;
+                        // Check if User ID and password are correct
+                        if ((userID === "Pranav" && password === "pranav1234") ||
+                            (userID === "Janhavi" && password === "janhavi1234"))
+                        
+                        {
+                            // Redirect to the second page with user data
+                            window.location.href = `random.html?userID=${userID}&password=${password}`;
+                        } else {
+                            // Display an error message or perform some other action
+                            alert("Invalid User ID or Password. Please try again.");
+                        }
+                    });
+    </script>
+</body>
+</html>
